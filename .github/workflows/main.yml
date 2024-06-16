@@ -10,8 +10,7 @@ jobs:
     env:
       PYTHON_VERSION: '3.x'
       VENV_DIR: env
-      DOCUMENT_PDF: path/to/your/document.pdf
-      DOCUMENT_EPUB: books/Islam_et_judéo-christianisme_Ellul_Jacques.epub
+      DOCUMENT_EPUB: books/LEmpireAssyrien.epub
       REPO_DIR: ${{ github.workspace }}
 
     steps:
