@@ -139,8 +139,9 @@ if __name__ == "__main__":
         from_chapter = int(args.from_chapter)
         to_chapter = int(args.to_chapter)
         from_lang = args.from_lang
-        to_lang = args.to_lang
-        openai_client = OpenAI(api_key=config['openai']['api_key'])
+        to_lang = args.to_lang           
+        OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+        openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
         translate(openai_client, args.input, args.output, from_chapter, to_chapter, from_lang, to_lang)
 
