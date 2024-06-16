@@ -50,7 +50,7 @@ def system_prompt(from_lang, to_lang):
 
 def translate_chunk(client, text, from_lang='EN', to_lang='AR'):
     response = client.chat.completions.create(
-        model='gpt-4-1106-preview',
+        model='text-davinci-003',
         temperature=0.2,
         messages=[
             { 'role': 'system', 'content': system_prompt(from_lang, to_lang) },
