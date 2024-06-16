@@ -36,6 +36,6 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.CHATGPT_API_KEY }}
         run: |
           source env/bin/activate
-          python main.py show-chapters --input ${{ env.DOCUMENT_EPUB }}
+         # python main.py show-chapters --input ${{ env.DOCUMENT_EPUB }}
           python main.py translate --input ${{ env.DOCUMENT_EPUB }} --output translatedbook.epub --config --from-lang EN --to-lang PL
           python src/translate-cookbook.py ${{ env.DOCUMENT_EPUB }} epub
