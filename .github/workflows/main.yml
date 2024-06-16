@@ -28,7 +28,7 @@ jobs:
           python -m venv ${{ env.VENV_DIR }}
           python -m pip install --upgrade pip
           source ${{ env.VENV_DIR }}/bin/activate
-          pip install pdfplumber ebooklib requests pandas openai transformers
+          pip install pdfplumber ebooklib requests pandas openai transformers beautifulsoup4
           
       - name: Extract and translate EPUB
        # if: startsWith(github.event.head_commit.message, 'Translate EPUB')
