@@ -7,8 +7,6 @@ from ebooklib import epub
 from bs4 import BeautifulSoup
 from openai import OpenAI
 
-
-
 def read_config(config_file):
     with open(config_file, 'r') as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
