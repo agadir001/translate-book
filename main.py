@@ -1,6 +1,7 @@
 import argparse, \
        re, \
        yaml
+import os
 
 import ebooklib
 from ebooklib import epub
