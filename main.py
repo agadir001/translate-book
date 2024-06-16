@@ -49,7 +49,7 @@ def system_prompt(from_lang, to_lang):
     return p
 
 
-def translate_chunk(client, text, from_lang='EN', to_lang='PL'):
+def translate_chunk(client, text, from_lang='EN', to_lang='AR'):
     response = client.chat.completions.create(
         model='gpt-4-1106-preview',
         temperature=0.2,
@@ -63,7 +63,7 @@ def translate_chunk(client, text, from_lang='EN', to_lang='PL'):
     return translated_text
 
 
-def translate_text(client, text, from_lang='EN', to_lang='PL'):
+def translate_text(client, text, from_lang='EN', to_lang='AR'):
     translated_chunks = []
     chunks = split_html_by_sentence(text)
 
@@ -74,7 +74,7 @@ def translate_text(client, text, from_lang='EN', to_lang='PL'):
     return ' '.join(translated_chunks)
 
 
-def translate(client, input_epub_path, output_epub_path, from_chapter=0, to_chapter=9999, from_lang='EN', to_lang='PL'):
+def translate(client, input_epub_path, output_epub_path, from_chapter=0, to_chapter=9999, from_lang='EN', to_lang='AR'):
     book = epub.read_epub(input_epub_path)
 
     current_chapter = 1
@@ -124,7 +124,7 @@ if __name__ == "__main__":
     parser_translate.add_argument('--from-chapter', type=int, help='Starting chapter for translation.')
     parser_translate.add_argument('--to-chapter', type=int, help='Ending chapter for translation.')
     parser_translate.add_argument('--from-lang', help='Source language.', default='EN')
-    parser_translate.add_argument('--to-lang', help='Target language.', default='PL')
+    parser_translate.add_argument('--to-lang', help='Target language.', default='AR')
 
     # Create the parser for the "show-chapters" mode
     parser_show = subparsers.add_parser('show-chapters', help='Show the list of chapters.')
